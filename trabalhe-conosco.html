@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trabalhe na NBS Telecom - Oportunidades de carreira em telecomunicações">
+    <title>Trabalhe Conosco - NBS Telecom</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png" as="image">
+
+    <!-- Preload de recursos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Reset e variáveis */
+        :root {
+            --primary: #FF6B2B;
+            --primary-dark: #E65A1F;
+            --primary-light: #FF8C5A;
+            --primary-lighter: #FFE0D3;
+            --primary-gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --secondary: #1A237E;
+            --bg-color: #FFFFFF;
+            --text-color: #2C3E50;
+            --card-bg: #FFFFFF;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #121212;
+            --footer-text: #FFFFFF;
+            --card-border: #F8F9FA;
+            --input-border: #F8F9FA;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Tema escuro */
+        [data-theme="dark"] {
+            --primary: #FF8C5A;
+            --primary-dark: #FF6B2B;
+            --primary-light: #FFE0D3;
+            --primary-lighter: #FF8C5A;
+            --secondary: #303F9F;
+            --bg-color: #121212;
+            --text-color: #FFFFFF;
+            --card-bg: #1E1E1E;
+            --header-bg: rgba(18, 18, 18, 0.95);
+            --footer-bg: #1E1E1E;
+            --footer-text: #FFFFFF;
+            --card-border: #2C2C2C;
+            --input-border: #2C2C2C;
+            --shadow: 0 4px 6px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header e Navegação */
+        .header {
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: var(--header-bg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-button {
+            background: var(--primary-gradient);
+            color: var(--bg-color);
+            padding: 0.85rem 1.8rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 2px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-dark);
+        }
+
+        .nav-button i {
+            font-size: 1.2rem;
+        }
+
+        [data-theme="dark"] .nav-button {
+            background: var(--primary);
+            color: var(--bg-color);
+        }
+
+        [data-theme="dark"] .nav-button:hover {
+            background: var(--primary-light);
+            color: var(--text-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1rem 4rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff10' d='M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        /* Texto Introdutório */
+        .intro-section {
+            padding: 6rem 0;
+            background: var(--bg-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: -300px;
+            right: -300px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-content h2 {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .intro-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .intro-content p {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Benefícios */
+        .benefits {
+            padding: 6rem 1rem;
+            background: var(--bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-border);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .benefit-text {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Processo */
+        .process {
+            padding: 6rem 1rem;
+            background: var(--bg-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: -300px;
+            right: -300px;
+            opacity: 0.05;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            color: var(--bg-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 600;
+        }
+
+        .step-title {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-text {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 4rem 1rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+        }
+
+        .footer-logo {
+            color: var(--footer-text);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: var(--footer-text);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--primary);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            color: var(--footer-text);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-link a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Botão de tema */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--bg-color);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--header-bg);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-text {
+                font-size: 1.1rem;
+            }
+
+            .intro-content h2 {
+                font-size: 2rem;
+            }
+
+            .intro-content p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão de alternar tema -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <i class="fas fa-sun" aria-hidden="true"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container" role="navigation" aria-label="Menu principal">
+            <a href="index.html" class="logo" aria-label="NBS Telecom - Página inicial">
+                <img src="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png" alt="Logo NBS Telecom" width="90" height="90">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu" role="menu">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Início</a></li>
+                <li role="none"><a href="index.html#planos" class="nav-link" role="menuitem">Serviços</a></li>
+                <li role="none"><a href="sobre.html" class="nav-link" role="menuitem">Sobre</a></li>
+                <li role="none"><a href="index.html#contact" class="nav-link" role="menuitem">Contato</a></li>
+                <li role="none"><a href="#" class="nav-link" role="menuitem" aria-current="page">Trabalhe Conosco</a></li>
+                <li role="none"><a href="https://nbstelecom.com.br/area-restrita" target="_blank" rel="noopener" class="nav-button" role="menuitem">
+                    <i class="fas fa-user-circle" aria-hidden="true"></i> Área do Cliente
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Faça Parte do Nosso Time</h1>
+            <p class="hero-text">Junte-se a uma equipe inovadora e ajude a transformar o futuro das telecomunicações na Amazônia</p>
+            <div class="hero-buttons" style="margin-bottom: 3rem;">
+                <a href="https://nbs.vagas.solides.com.br/" target="_blank" class="cta-button">
+                    <i class="fas fa-user-plus"></i> Cadastre seu Currículo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Texto Introdutório -->
+    <section class="intro-section" style="padding: 4rem 0; background: var(--bg-color);">
+        <div class="container">
+            <div class="intro-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="color: var(--text-color); margin-bottom: 2rem; font-size: 2rem;">Por que escolher a NBS Telecom?</h2>
+                <p style="color: var(--text-color); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Na NBS Telecom, acreditamos que nosso maior ativo são as pessoas. Buscamos profissionais apaixonados por tecnologia e inovação, que queiram fazer parte de uma empresa em constante crescimento e que está transformando a conectividade na região amazônica.
+                </p>
+                <p style="color: var(--text-color); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Oferecemos um ambiente de trabalho dinâmico e colaborativo, onde cada membro da equipe tem a oportunidade de crescer e se desenvolver profissionalmente. Valorizamos a diversidade, a criatividade e o comprometimento com a excelência.
+                </p>
+                <p style="color: var(--text-color); line-height: 1.8;">
+                    Se você está pronto para enfrentar novos desafios e fazer parte de uma empresa que está revolucionando o mercado de telecomunicações, a NBS Telecom é o lugar certo para você.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Por que trabalhar na NBS Telecom?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="benefit-title">Crescimento Profissional</h3>
+                    <p class="benefit-text">Oportunidades de desenvolvimento e carreira em uma empresa em expansão</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="benefit-title">Ambiente Colaborativo</h3>
+                    <p class="benefit-text">Trabalhe com uma equipe dinâmica e comprometida com a inovação</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="benefit-title">Benefícios Competitivos</h3>
+                    <p class="benefit-text">Pacote de benefícios atrativo e valorização do colaborador</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="benefit-title">Capacitação Contínua</h3>
+                    <p class="benefit-text">Investimos no desenvolvimento profissional dos nossos colaboradores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Como se Candidatar</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Acesse o Portal</h3>
+                    <p class="step-text">Clique no botão "Cadastre seu Currículo" e acesse nosso portal de vagas</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Cadastre seu Currículo</h3>
+                    <p class="step-text">Preencha todas as informações solicitadas com atenção</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Candidate-se às Vagas</h3>
+                    <p class="step-text">Busque as vagas disponíveis e candidate-se às que mais combinam com seu perfil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <a href="index.html" class="footer-logo">NBS Telecom</a>
+                <p class="footer-text">Conectando negócios e pessoas com soluções de alta performance em telecomunicações.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/nbstelecom" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://linkedin.com/company/nbstelecom" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/nbstelecom" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Serviços</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="index.html#planos">Internet Empresarial</a></li>
+                    <li class="footer-link"><a href="index.html#planos">Internet Residencial</a></li>
+                    <li class="footer-link"><a href="index.html#planos">Segurança Digital</a></li>
+                    <li class="footer-link"><a href="index.html#planos">Soluções Corporativas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Empresa</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="sobre.html">Sobre Nós</a></li>
+                    <li class="footer-link"><a href="trabalhe-conosco.html">Carreiras</a></li>
+                    <li class="footer-link"><a href="index.html#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NBS Telecom. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu móvel
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Header scroll effect com otimização
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        // Animação nos cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.benefit-card, .step-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Código do tema
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Verifica se há preferência salva
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateThemeIcon(currentTheme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        // Melhor tratamento de erros
+        window.addEventListener('error', (event) => {
+            console.error('Erro:', event.error);
+            // Aqui você pode adicionar um sistema de logging ou notificação
+        });
+    </script>
+</body>
+</html> 

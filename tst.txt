@@ -1,0 +1,110 @@
+Página Inicial (index.html):
+Header (Cabeçalho):
+Logo da NBS Telecom
+Menu de navegação responsivo
+Botão "Área do Cliente"
+Sistema de tema claro/escuro
+Hero Section:
+Título principal com animação
+Texto introdutório
+Dois botões de chamada para ação
+Imagem ilustrativa com efeito parallax
+Estatísticas animadas (3.100 KM de Fibra, 1.000 Clientes, 99% Disponibilidade)
+Seção "Nossos Planos":
+Três cards principais:
+Link Dedicado (imagem: 01.jpg)
+MPLS / Lan-To-Lan (imagem: 02.jpg)
+Produtos Para Provedores (imagem: 03.jpg)
+Cada card tem:
+Imagem de fundo
+Título
+Descrição
+Lista de características
+Botão "Saiba mais"
+Efeitos hover modernos
+Mapa e Localização:
+Mapa do Google Maps integrado
+Card com informações de contato
+Endereço da matriz em Ji-Paraná
+Horário de funcionamento
+Botão "Como Chegar"
+Formulário de Contato:
+Campos validados
+Design responsivo
+Animações de feedback
+Integração com envio de mensagens
+Página Sobre (sobre.html):
+Seção de Executivos:
+Cards com fotos dos diretores
+Informações profissionais
+Links para redes sociais
+Efeitos de hover e animações
+Nossa Essência:
+Visão
+Missão
+Valores
+Design com ícones e animações
+Formulário "Fale com um consultor":
+Campos personalizados
+Validação em tempo real
+Design moderno e responsivo
+Página Trabalhe Conosco (trabalhe-conosco.html):
+Hero Section:
+Título chamativo
+Botão para cadastro de currículo
+Link direto para o portal de vagas
+Seção Introdutória:
+Texto sobre a empresa
+Valores e cultura organizacional
+Design clean e profissional
+Benefícios:
+Cards informativos
+Ícones ilustrativos
+Animações suaves
+Processo Seletivo:
+Passo a passo do processo
+Cards numerados
+Instruções claras
+Características Técnicas Gerais:
+Responsividade:
+Design adaptativo para todos os dispositivos
+Menu hamburguer para mobile
+Imagens otimizadas
+Performance:
+Carregamento otimizado
+Preload de recursos importantes
+Compressão de imagens
+Acessibilidade:
+Contraste adequado
+Tags semânticas
+Textos alternativos em imagens
+Tema Claro/Escuro:
+Alternância suave entre temas
+Persistência da preferência do usuário
+Cores otimizadas para cada tema
+Animações e Efeitos:
+Transições suaves
+Efeitos de hover
+Animações de scroll
+Contador de números
+Parallax
+SEO:
+Meta tags otimizadas
+Estrutura semântica
+Descrições adequadas
+URLs amigáveis
+Segurança:
+Validação de formulários
+Proteção contra spam
+Conexões seguras
+O site foi desenvolvido seguindo as melhores práticas de desenvolvimento web, com foco em:
+Experiência do usuário (UX)
+Interface moderna e profissional
+Velocidade de carregamento
+Facilidade de navegação
+Compatibilidade com diferentes navegadores
+Manutenibilidade do código
+Todas as páginas mantêm uma identidade visual consistente, usando as cores principais da empresa:
+Laranja (#FF6B2B)
+Azul escuro (#1A237E)
+Variações para criar profundidade e contraste

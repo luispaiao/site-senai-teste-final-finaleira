@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre a NBS Telecom - Conheça nossa história, valores e equipe">
+    <title>Sobre Nós - NBS Telecom</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png" as="image">
+
+    <!-- Preload de recursos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Variáveis de tema claro (padrão) */
+        :root {
+            --primary: #FF6B2B;
+            --primary-dark: #E65A1F;
+            --primary-light: #FF8C5A;
+            --primary-lighter: #FFE0D3;
+            --primary-gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --secondary: #1A237E;
+            --bg-color: #FFFFFF;
+            --text-color: #2C3E50;
+            --card-bg: #FFFFFF;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #121212;
+            --footer-text: #FFFFFF;
+            --card-border: #F8F9FA;
+            --input-border: #F8F9FA;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Tema escuro */
+        [data-theme="dark"] {
+            --primary: #FF8C5A;
+            --primary-dark: #FF6B2B;
+            --primary-light: #FFE0D3;
+            --primary-lighter: #FF8C5A;
+            --secondary: #303F9F;
+            --bg-color: #121212;
+            --text-color: #FFFFFF;
+            --card-bg: #1E1E1E;
+            --header-bg: rgba(18, 18, 18, 0.95);
+            --footer-bg: #1E1E1E;
+            --footer-text: #FFFFFF;
+            --card-border: #2C2C2C;
+            --input-border: #2C2C2C;
+            --shadow: 0 4px 6px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: var(--header-bg);
+        }
+
+        .header.scrolled {
+            background: var(--header-bg);
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-button {
+            background: var(--primary-gradient);
+            color: var(--bg-color);
+            padding: 0.85rem 1.8rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 2px solid transparent;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-dark);
+        }
+
+        .nav-button i {
+            font-size: 1.2rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--header-bg);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards e Grids */
+        .vision-mission-values,
+        .pillars-grid,
+        .executives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Executivos */
+        .executive-card {
+            text-align: center;
+        }
+
+        .executive-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        .executive-info {
+            padding: 1.5rem;
+        }
+
+        .executive-name {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .executive-role {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .executive-bio {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Executivos */
+        .executive-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        .executive-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .executive-card:hover .executive-image img {
+            transform: scale(1.05);
+        }
+
+        .executive-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            transition: bottom 0.3s ease;
+        }
+
+        .executive-card:hover .executive-social {
+            bottom: 0;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 4rem 0;
+            gap: 1rem;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .divider-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Quote Container */
+        .quote-container {
+            position: relative;
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .highlight-text {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .recognition-text {
+            color: var(--text-color);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .motivation-quote {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .small-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Botão de tema */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--bg-color);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Atualização dos estilos dos botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        /* Atualização dos estilos do formulário */
+        .form-input {
+            background: var(--card-bg);
+            border: 1px solid var(--input-border);
+            color: var(--text-color);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-lighter);
+        }
+
+        .form-button {
+            background: var(--primary-gradient);
+            color: var(--bg-color);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-dark);
+        }
+
+        .form-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .executive-card img {
+                height: 250px;
+            }
+        }
+
+        /* Seção de Executivos */
+        .executives-section {
+            background: var(--bg-color);
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .executives-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: var(--primary-gradient);
+            opacity: 0.1;
+            transform: skewY(-5deg);
+            transform-origin: top left;
+        }
+
+        .executive-card {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+        }
+
+        /* Seção VMV */
+        .vision-mission-values {
+            background: linear-gradient(135deg, rgba(255, 107, 43, 0.15), rgba(255, 140, 90, 0.25));
+            padding: var(--section-spacing) 0;
+            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 107, 43, 0.1);
+        }
+
+        .vision-mission-values::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,107,43,0.1)"/></svg>') repeat;
+            opacity: 0.15;
+        }
+
+        .vmv-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 43, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .vmv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 43, 0.1);
+        }
+
+        .vmv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(255, 107, 43, 0.2);
+        }
+
+        .vmv-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 107, 43, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .vmv-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .vmv-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .values-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .value-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 0.8rem;
+            color: white;
+            box-shadow: 0 5px 10px rgba(255, 107, 43, 0.2);
+        }
+
+        .light.section-header {
+            color: var(--text-color);
+        }
+
+        .light .section-subtitle {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Seção de Pilares */
+        .pillars-section {
+            padding: var(--section-spacing) 0;
+            background: var(--bg-color);
+        }
+
+        .pillar-card {
+            border: 2px solid var(--card-border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Seção de Contato */
+        .contact-section {
+            padding: 4rem 0;
+            background: var(--bg-color);
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            text-align: left;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            font-size: 1rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: var(--text-color);
+            opacity: 0.6;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 107, 43, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+            accent-color: var(--primary);
+        }
+
+        .radio-label {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .submit-button {
+            display: block;
+            width: 150px;
+            margin: 2rem auto 0;
+            padding: 0.8rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        [data-theme="dark"] .form-input {
+            background: var(--card-bg);
+            border-color: var(--card-border);
+        }
+
+        [data-theme="dark"] .form-input::placeholder {
+            color: var(--text-color);
+            opacity: 0.5;
+        }
+
+        [data-theme="dark"] .submit-button {
+            background: var(--primary);
+        }
+
+        [data-theme="dark"] .submit-button:hover {
+            background: var(--primary-light);
+        }
+
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            :root {
+                --section-spacing: 4rem;
+            }
+
+            .executives-grid,
+            .vmv-container,
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-mission-values {
+                margin: var(--section-spacing) 1rem;
+            }
+        }
+
+        /* Remover os estilos de produtos */
+        /* Estilos para Produtos */
+        .products-section,
+        .products-section::before,
+        .products-grid,
+        .product-card,
+        .product-image,
+        .product-overlay,
+        .product-content,
+        .product-features {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                height: 300px;
+            }
+
+            .product-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+            }
+
+            .product-content {
+                transform: translateY(0);
+            }
+        }
+
+        /* Nossa Essência */
+        .essencia {
+            padding: 6rem 1rem;
+            background: var(--bg-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .essencia::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: -300px;
+            right: -300px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .essencia-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .essencia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .essencia-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .essencia-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .essencia-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .essencia-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .essencia-card:hover .essencia-icon {
+            transform: scale(1.1);
+        }
+
+        .essencia-title {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .essencia-text {
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão de alternar tema -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <i class="fas fa-sun" aria-hidden="true"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container" role="navigation" aria-label="Menu principal">
+            <a href="index.html" class="logo" aria-label="NBS Telecom - Página inicial">
+                <img src="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png" alt="Logo NBS Telecom" width="90" height="90">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu" role="menu">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Início</a></li>
+                <li role="none"><a href="index.html#planos" class="nav-link" role="menuitem">Serviços</a></li>
+                <li role="none"><a href="#" class="nav-link" role="menuitem" aria-current="page">Sobre</a></li>
+                <li role="none"><a href="index.html#contact" class="nav-link" role="menuitem">Contato</a></li>
+                <li role="none"><a href="trabalhe-conosco.html" class="nav-link" role="menuitem">Trabalhe Conosco</a></li>
+                <li role="none"><a href="https://nbstelecom.com.br/area-restrita" target="_blank" rel="noopener" class="nav-button" role="menuitem">
+                    <i class="fas fa-user-circle" aria-hidden="true"></i> Área do Cliente
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <header class="section-header">
+                <h1 class="section-title">Nossa Liderança</h1>
+                <p class="section-subtitle">Conheça os executivos que lideram a transformação digital na Amazônia</p>
+            </header>
+
+            <!-- Executivos -->
+            <section class="executives-section">
+                <div class="executives-grid">
+                    <div class="card executive-card">
+                        <div class="executive-image">
+                            <img src="https://nbstelecom.com.br/wp-content/uploads/2021/12/Aldemir-Santiago.jpg" alt="Ademir Santiago">
+                            <div class="executive-social">
+                                <a href="https://twitter.com/ademirmsantiago/" class="social-link" target="_blank" title="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://www.facebook.com/ademirsantiago" class="social-link" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="executive-info">
+                            <h3 class="executive-name">Ademir Santiago</h3>
+                            <p class="executive-role">CEO e Presidente da NBS Telecom</p>
+                            <p class="executive-bio">Profissional com formação em administração de empresas. Com vasta experiência ao longo de 25 anos em gestão de TI e Telecom no setor privado. Vivência em projetos de reestruturação, expansão e implantação de internet em grandes empresas nas áreas rural, urbana e agronegócio.</p>
+                        </div>
+                    </div>
+                    <div class="card executive-card">
+                        <div class="executive-image">
+                            <img src="https://nbstelecom.com.br/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-29-at-12.41.53.jpeg" alt="Fabiano Roberto">
+                            <div class="executive-social">
+                                <a href="http://www.linkedin.com/in/fabiano-roberto-4a46151aa" class="social-link" target="_blank" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.facebook.com/fabiano.correadefreitas" class="social-link" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="executive-info">
+                            <h3 class="executive-name">Fabiano Roberto</h3>
+                            <p class="executive-role">Diretor Operacional</p>
+                            <p class="executive-bio">Profissional com formação em Tecnologia da Informação. Com vasta experiência ao longo de 25 anos em gestão de TI no setor privado. Vivência em projetos de reestruturação, expansão e implantação e responsável pela integração das áreas operacionais e administrativas.</p>
+                        </div>
+                    </div>
+                    <div class="card executive-card">
+                        <div class="executive-image">
+                            <img src="https://nbstelecom.com.br/wp-content/uploads/2021/12/Janio-Cerqueira.jpg" alt="Janio Cerqueira">
+                            <div class="executive-social">
+                                <a href="https://www.linkedin.com/in/janiocerqueira/" class="social-link" target="_blank" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.facebook.com/janio.cerqueira" class="social-link" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="executive-info">
+                            <h3 class="executive-name">Janio Cerqueira</h3>
+                            <p class="executive-role">Diretor Comercial</p>
+                            <p class="executive-bio">Tenho trabalhado com infraestrutura de TI em geral desde Provedores de Serviço (MSP) a Empresas e Órgãos Públicos. Atuando como Diretor de Comercial na Web Secure Soluções de TI e Consultor Comercial na NBS Telecom.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon"><i class="fas fa-star"></i></span>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- Visão, Missão e Valores -->
+            <section class="essencia">
+                <div class="essencia-container">
+                    <h2 class="section-title">Nossa Essência</h2>
+                    <p class="section-subtitle">O que nos move</p>
+                    <p class="section-description">Nossos valores fundamentais guiam cada decisão e ação, formando a base de nossa cultura organizacional e compromisso com a excelência.</p>
+                    <div class="essencia-grid">
+                        <div class="essencia-card">
+                            <div class="essencia-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="essencia-title">Visão</h3>
+                            <p class="essencia-text">Ser referência em soluções de telecomunicações na Amazônia, reconhecida pela excelência em serviços e compromisso com o desenvolvimento regional.</p>
+                        </div>
+                        <div class="essencia-card">
+                            <div class="essencia-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="essencia-title">Missão</h3>
+                            <p class="essencia-text">Prover soluções de telecomunicações com excelência, contribuindo para o desenvolvimento e conectividade da região amazônica.</p>
+                        </div>
+                        <div class="essencia-card">
+                            <div class="essencia-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3 class="essencia-title">Valores</h3>
+                            <p class="essencia-text">Ética, inovação, compromisso com o cliente, sustentabilidade e valorização das pessoas são os pilares que sustentam nossa atuação.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pilares -->
+            <section class="pillars-section">
+                <header class="section-header">
+                    <h2 class="section-title">Nossos Pilares</h2>
+                    <p class="section-subtitle">As bases que sustentam nossa excelência</p>
+                </header>
+                <div class="pillars-grid">
+                    <div class="card pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Foco no Cliente</h3>
+                        <p>Nossos clientes são a razão da nossa existência. Nos comprometemos a atender suas demandas no local e prazo necessários.</p>
+                    </div>
+                    <div class="card pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Segurança</h3>
+                        <p>Somos rigorosos no cumprimento dos nossos padrões, prezando pela segurança dos nossos clientes e colaboradores.</p>
+                    </div>
+                    <div class="card pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Resultados com Qualidade</h3>
+                        <p>Buscamos maximizar os resultados, valorizando a qualidade em cada detalhe de nossa operação.</p>
+                    </div>
+                    <div class="card pillar-card">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Trabalho em Equipe</h3>
+                        <p>Juntos alcançamos nossos objetivos, confiamos uns nos outros, compartilhando conquistas e resultados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mensagem Final -->
+            <section class="about-footer">
+                <div class="quote-container">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="highlight-text">Visamos construir relacionamentos de longo prazo, tendo como base a ética profissional. Estamos comprometidas com o sucesso de cada um de nossos clientes, pois acreditamos que o crescimento deles também será seu e de seus colaboradores.</p>
+                    <p class="recognition-text">Quando nossos clientes ganham, nós também ganhamos. <strong>Fomos reconhecidos por nossas conquistas</strong> em categorias como diversidade, ética, excelência, inovação e integridade.</p>
+                    <div class="motivation-quote">
+                        <img src="https://nbstelecom.com.br/wp-content/uploads/2020/02/logo.png" alt="NBS Logo" class="small-logo">
+                        <p>O sucesso de nossos clientes é o que nos motiva...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulário de Contato -->
+            <section class="contact-section">
+                <div class="container">
+                    <h2 class="contact-title">Fale com um consultor</h2>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="consultorForm">
+                            <div class="form-group">
+                                <input type="text" id="nome" name="nome" class="form-input" placeholder="Nome (contato)">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="Telefone">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="cidade" name="cidade" class="form-input" placeholder="Cidade">
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="tipo" value="contato">
+                                    <span class="radio-label">Contato</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="tipo" value="duvidas">
+                                    <span class="radio-label">Dúvidas</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="tipo" value="orcamento">
+                                    <span class="radio-label">Orçamento</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Empresa">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="cnpj" name="cnpj" class="form-input" placeholder="CNPJ">
+                            </div>
+                            <button type="submit" class="submit-button">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #1a1a1a; color: #fff; padding: 4rem 1rem 2rem;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 1200px; margin: 0 auto;">
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><a href="index.html" style="color: #fff; text-decoration: none;">NBS Telecom</a></h3>
+                <p style="color: #ccc; margin-bottom: 2rem;">Conectando negócios e pessoas com soluções de alta performance em telecomunicações.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://facebook.com/nbstelecom" target="_blank" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                    <a href="https://linkedin.com/company/nbstelecom" target="_blank" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/nbstelecom" target="_blank" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Serviços</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;"><a href="index.html#planos" style="color: #ccc; text-decoration: none;">Internet Empresarial</a></li>
+                    <li style="margin-bottom: 1rem;"><a href="index.html#planos" style="color: #ccc; text-decoration: none;">Internet Residencial</a></li>
+                    <li style="margin-bottom: 1rem;"><a href="index.html#planos" style="color: #ccc; text-decoration: none;">Segurança Digital</a></li>
+                    <li style="margin-bottom: 1rem;"><a href="index.html#planos" style="color: #ccc; text-decoration: none;">Soluções Corporativas</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Empresa</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;"><a href="sobre.html" style="color: #ccc; text-decoration: none;">Sobre Nós</a></li>
+                    <li style="margin-bottom: 1rem;"><a href="trabalhe-conosco.html" style="color: #ccc; text-decoration: none;">Carreiras</a></li>
+                    <li style="margin-bottom: 1rem;"><a href="index.html#contact" style="color: #ccc; text-decoration: none;">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #333;">
+            <p style="color: #888;">&copy; 2025 NBS Telecom. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu móvel
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Header scroll effect com otimização
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        // Código do tema
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Verifica se há preferência salva
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateThemeIcon(currentTheme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        // Melhor tratamento de erros
+        window.addEventListener('error', (event) => {
+            console.error('Erro:', event.error);
+            // Aqui você pode adicionar um sistema de logging ou notificação
+        });
+    </script>
+</body>
+</html> 
